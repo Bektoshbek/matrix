@@ -15,11 +15,6 @@ type Matrix struct {
 	Rows    int
 }
 
-// func IsNumeric(s string) bool {
-// 	_, err := strconv.ParseFloat(s, 32)
-//     return err == nil
-// }
-
 // IsValid is a method that validates entered matrix. It returns false when entered matrix has wrong structure, otherwise true
 func (m *Matrix) IsValid() bool {
 	length := len(m.Content[0])
