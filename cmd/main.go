@@ -3,7 +3,7 @@
 // Create Matrix structure (status: DONE)
 // MatrixPrint function (status: DONE)
 // Check for compatibility of matrixes before operetaions! (status: DONE)
-// Dealing with incorrect input and errors/user-control (status: TODO)
+// Dealing with incorrect input and errors/user-control (status: DONE!)
 // Implement operations(+) (status: DONE)
 // Implement operations(-) (status: DONE)
 // Implement operations(*) (status: DONE!!!)

@@ -23,7 +23,7 @@ func (m1 *Matrix) Add(m2 Matrix) (Matrix, error) {
 		res Matrix
 	)
 	for rowInd := 0; rowInd < m1.Rows; rowInd++ {
-		var nums []int
+		var nums []float32
 		for i := 0; i < m1.Columns; i++ {
 			nums = append(nums, m1.Content[rowInd][i]+m2.Content[rowInd][i])
 		}
@@ -41,7 +41,7 @@ func (m1 *Matrix) Substract(m2 Matrix) (Matrix, error) {
 	}
 	var res Matrix
 	for rowInd := 0; rowInd < m1.Rows; rowInd++ {
-		var nums []int
+		var nums []float32
 		for i := 0; i < m1.Columns; i++ {
 			nums = append(nums, m1.Content[rowInd][i]*m2.Content[rowInd][i])
 		}
@@ -59,9 +59,9 @@ func (m1 *Matrix) Multiply(m2 Matrix) (Matrix, error) {
 	}
 	var res Matrix
 	for rowInd := 0; rowInd < m1.Rows; rowInd++ {
-		row := []int{}
+		row := []float32{}
 		for m2ColInd := 0; m2ColInd < m2.Columns; m2ColInd++ {
-			num := 0
+			var num float32 = 0
 			for m1ColInd := 0; m1ColInd < m1.Columns; m1ColInd++ {
 				num += m1.Content[rowInd][m1ColInd] * m2.Content[m1ColInd][m2ColInd]
 			}

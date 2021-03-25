@@ -10,22 +10,15 @@ import (
 )
 
 type Matrix struct {
-	Content [][]int
+	Content [][]float32
 	Columns int
 	Rows    int
 }
 
-
-
-func TrimEmpties(s []string) []string {
-	for i := 0; i < len(s); i++ {
-		if s[i] == "" {
-			fmt.Println("FOUND:", i)
-			s = append(s[:i], s[i+1:]...)
-		}
-	}
-	return s
-}
+// func IsNumeric(s string) bool {
+// 	_, err := strconv.ParseFloat(s, 32)
+//     return err == nil
+// }
 
 // IsValid is a method that validates entered matrix. It returns false when entered matrix has wrong structure, otherwise true
 func (m *Matrix) IsValid() bool {
@@ -41,6 +34,7 @@ func (m *Matrix) IsValid() bool {
 
 // ReadMatrix is a function that reads(scans) a matrix from input.
 func ReadMatrix() Matrix {
+AGAIN:
 	fmt.Println("Enter matrix: ")
 	var (
 		matrix   Matrix
@@ -48,7 +42,7 @@ func ReadMatrix() Matrix {
 	)
 
 	for {
-		var row []int
+		var row []float32
 		buffer := bufio.NewReader(os.Stdin)
 		nums, err := buffer.ReadString('\n')
 		nums = nums[:len(nums)-1]
@@ -58,16 +52,16 @@ func ReadMatrix() Matrix {
 			break
 		}
 
-		elements = strings.Split(nums, " ")
-		elements = TrimEmpties(elements)
+		elements = strings.Fields(nums)
 		matrix.Columns = len(elements)
 
 		for _, num := range elements {
-			number, err := strconv.Atoi(num)
+			number, err := strconv.ParseFloat(num, 32)
 			if err != nil {
-				log.Fatalf("ERROR: %v", err)
+				fmt.Println("Sorry, but seems like your input contains non-numeric values\nPlease check and enter one more time!")
+				goto AGAIN
 			}
-			row = append(row, number)
+			row = append(row, float32(number))
 		}
 		matrix.Content = append(matrix.Content, row)
 		matrix.Rows++
