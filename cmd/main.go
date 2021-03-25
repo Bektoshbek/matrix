@@ -1,12 +1,3 @@
-// THIS IS FOR NOTE!!!:
-// An Error which occurs when input contains spaces needs to be handled!!! (status: DONE!)
-// Create Matrix structure (status: DONE)
-// MatrixPrint function (status: DONE)
-// Check for compatibility of matrixes before operetaions! (status: DONE)
-// Dealing with incorrect input and errors/user-control (status: DONE!)
-// Implement operations(+) (status: DONE)
-// Implement operations(-) (status: DONE)
-// Implement operations(*) (status: DONE!!!)
 package main
 
 import (
