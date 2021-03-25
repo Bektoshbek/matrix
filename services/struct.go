@@ -15,6 +15,8 @@ type Matrix struct {
 	Rows    int
 }
 
+
+
 func TrimEmpties(s []string) []string {
 	for i := 0; i < len(s); i++ {
 		if s[i] == "" {
