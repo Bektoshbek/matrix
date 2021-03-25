@@ -1,3 +1,5 @@
+// Developed by Bektosh Madaminov @Bektoshbek
+
 package main
 
 import (
