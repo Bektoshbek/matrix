@@ -11,8 +11,8 @@ import (
 func main() {
 	var (
 		operand string
-		res services.Matrix
-		err error
+		res     services.Matrix
+		err     error
 	)
 	matrix1 := services.ReadMatrix()
 	matrix1.PrintMatrix()
@@ -26,7 +26,7 @@ AGAIN:
 	}
 	matrix2 := services.ReadMatrix()
 	matrix2.PrintMatrix()
-	
+
 	if operand == "+" {
 		res, err = matrix1.Add(matrix2)
 		if err != nil {
